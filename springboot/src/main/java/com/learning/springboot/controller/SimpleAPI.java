@@ -51,4 +51,8 @@ public class SimpleAPI {
 		
 		return books;
 	}
+
+	public void doSomething(){
+		System.out.println("Doing Random stuf!!");
+	}
 }

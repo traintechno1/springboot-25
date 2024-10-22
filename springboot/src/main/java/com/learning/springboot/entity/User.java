@@ -1,10 +1,13 @@
 package com.learning.springboot.entity;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -32,9 +35,12 @@ public class User {
 	
 	@Column(name="mobile")
 	private long mobile;
-	
-	// not required to add Column annotation for the 
-	// fields where column name and field name is same
+
 	private char gender;
 	private String city;
+	
+	
+	@OneToMany(mappedBy = "user")
+	private List<Orders> orders;
+	
 }
